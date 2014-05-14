@@ -1,0 +1,28 @@
+author: JuicyDev
+description: Core plugin containing useful methods.
+main: juicydev.jcore.JCore
+name: JCore
+version: '2.0'
+commands:
+    playdisc:
+        aliases: [disc, playrecord]
+        description: Play a music disc.
+        usage: |
+                
+                /playdisc <disc> [all/player]
+                /playdisc list
+    playmidi:
+        aliases: [midi]
+        description: Play a midi file.
+        usage: |
+                
+                /playmidi <all/player> <filename> 
+                /playmidi list
+    backup:
+        aliases: [jbackup]
+        description: Runs a backup.
+        usage: /backup
+    debug:
+        aliases: []
+        description: Enables/Disables debug info.
+        usage: /debug [on/off]

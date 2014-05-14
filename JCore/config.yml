@@ -1,0 +1,11 @@
+# Enable debugging information
+debug: false
+
+# Enable logging
+logging-enabled: false
+
+# Enable backup
+backup-enabled: false
+
+# Set the time between backups in minutes
+backup-delay: 30
