@@ -1,4 +1,4 @@
-package juicydev.jcore.utils.particleutil;
+package juicydev.jcore.utils.packet.particle;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -195,7 +195,7 @@ public enum ParticleEffect {
 	HAPPY_VILLAGER("happyVillager");
 
 	private static final Map<String, ParticleEffect> NAME_MAP = new HashMap<String, ParticleEffect>();
-	private static final double MAX_RANGE = 16;
+	private static final double MAX_RANGE = 50;
 	private static Constructor<?> packetPlayOutWorldParticles;
 	private static Method getHandle;
 	private static Field playerConnection;
@@ -500,7 +500,7 @@ public enum ParticleEffect {
 	 *            Amount of particles
 	 * @param players
 	 *            Receivers of the effect
-	 * @throws @IllegalArgumentException if the range is higher than 20
+	 * @throws @IllegalArgumentException if the range is higher than 50
 	 * @see #sendPacket
 	 * @see #instantiatePacket
 	 */
@@ -508,7 +508,7 @@ public enum ParticleEffect {
 			float offsetY, float offsetZ, float speed, int amount) {
 		if (range > MAX_RANGE)
 			throw new IllegalArgumentException(
-					"Range cannot exceed the maximum value of 16");
+					"Range cannot exceed the maximum value of 50");
 		sendPacket(
 				getPlayers(center, range),
 				instantiatePacket(name, center, offsetX, offsetY, offsetZ,
@@ -601,7 +601,7 @@ public enum ParticleEffect {
 	 *            Display speed of the particles
 	 * @param amount
 	 *            Amount of particles
-	 * @throws @IllegalArgumentException if the range is higher than 20
+	 * @throws @IllegalArgumentException if the range is higher than 50
 	 * @see #sendPacket
 	 * @see #instantiateIconCrackPacket
 	 */
@@ -609,7 +609,7 @@ public enum ParticleEffect {
 			float offsetX, float offsetY, float offsetZ, float speed, int amount) {
 		if (range > MAX_RANGE)
 			throw new IllegalArgumentException(
-					"Range has to be lower/equal the maximum of 16");
+					"Range has to be lower/equal the maximum of 50");
 		sendPacket(
 				getPlayers(center, range),
 				instantiateIconCrackPacket(id, center, offsetX, offsetY,
@@ -706,7 +706,7 @@ public enum ParticleEffect {
 	 *            z-axis
 	 * @param amount
 	 *            Amount of particles
-	 * @throws @IllegalArgumentException if the range is higher than 20
+	 * @throws @IllegalArgumentException if the range is higher than 50
 	 * @see #sendPacket
 	 * @see #instantiateBlockCrackPacket
 	 */
@@ -714,7 +714,7 @@ public enum ParticleEffect {
 			byte data, float offsetX, float offsetY, float offsetZ, int amount) {
 		if (range > MAX_RANGE)
 			throw new IllegalArgumentException(
-					"Range has to be lower/equal the maximum of 16");
+					"Range has to be lower/equal the maximum of 50");
 		sendPacket(
 				getPlayers(center, range),
 				instantiateBlockCrackPacket(id, data, center, offsetX, offsetY,
@@ -814,7 +814,7 @@ public enum ParticleEffect {
 	 *            Display speed of the particles
 	 * @param amount
 	 *            Amount of particles
-	 * @throws @IllegalArgumentException if the range is higher than 20
+	 * @throws @IllegalArgumentException if the range is higher than 50
 	 * @see #sendPacket
 	 * @see #instantiateBlockDustPacket
 	 */
@@ -823,7 +823,7 @@ public enum ParticleEffect {
 			float speed, int amount) {
 		if (range > MAX_RANGE)
 			throw new IllegalArgumentException(
-					"Range has to be lower/equal the maximum of 16");
+					"Range has to be lower/equal the maximum of 50");
 		sendPacket(
 				getPlayers(center, range),
 				instantiateBlockDustPacket(id, data, center, offsetX, offsetY,

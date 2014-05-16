@@ -363,7 +363,7 @@ public final class ReflectionUtil {
 		CHUNKIO,
 		COMMAND,
 		CONVERSATIONS,
-		ENCHANTMENS,
+		ENCHANTMENTS,
 		ENTITY,
 		EVENT,
 		GENERATOR,

@@ -1,4 +1,4 @@
-package juicydev.jcore.utils.particleutil;
+package juicydev.jcore.utils.packet.particle;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
