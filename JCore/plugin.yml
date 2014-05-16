@@ -2,7 +2,7 @@ author: JuicyDev
 description: Core plugin containing useful methods.
 main: juicydev.jcore.JCore
 name: JCore
-version: '2.0'
+version: '2.0.1'
 commands:
     playdisc:
         aliases: [disc, playrecord]
