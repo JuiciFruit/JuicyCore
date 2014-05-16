@@ -5,10 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.Validate;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.material.MaterialData;
 
 /**
@@ -29,7 +31,7 @@ public class ItemBuilder {
 
 	private void setMeta(ItemMeta meta) {
 		this.meta = meta;
-		this.stack.setItemMeta(meta);
+		updateStack();
 	}
 
 	private void updateMeta() {
@@ -38,6 +40,18 @@ public class ItemBuilder {
 
 	private void updateStack() {
 		stack.setItemMeta(meta);
+	}
+
+	private boolean isLeather() {
+		switch (stack.getType()) {
+		case LEATHER_HELMET:
+		case LEATHER_CHESTPLATE:
+		case LEATHER_LEGGINGS:
+		case LEATHER_BOOTS:
+			return true;
+		default:
+			return false;
+		}
 	}
 
 	/**
@@ -248,6 +262,35 @@ public class ItemBuilder {
 	}
 
 	/**
+	 * Set the colour of the stack
+	 * 
+	 * @param colour
+	 *            Colour of the stack
+	 * 
+	 * @throws NonLeatherArmourException
+	 *             If the stack is not a valid piece of leather armour
+	 */
+	public ItemBuilder setColour(Color colour) throws NonLeatherArmourException {
+		if (!isLeather())
+			throw new NonLeatherArmourException();
+		LeatherArmorMeta meta = (LeatherArmorMeta) stack.getItemMeta();
+		meta.setColor(colour);
+		setMeta(meta);
+		return this;
+	}
+
+	/**
+	 * Set the colour of the stack
+	 * 
+	 * @throws NonLeatherArmourException
+	 *             If the stack is not a valid piece of leather armour
+	 */
+	public ItemBuilder setColour(int red, int green, int blue)
+			throws NonLeatherArmourException {
+		return setColour(Color.fromRGB(red, green, blue));
+	}
+
+	/**
 	 * Set the ItemMeta of the stack
 	 * 
 	 * @param meta
@@ -256,6 +299,23 @@ public class ItemBuilder {
 	public ItemBuilder setItemMeta(ItemMeta meta) {
 		setMeta(meta);
 		updateStack();
+		return this;
+	}
+
+	/**
+	 * Set the LeatherArmorMeta of the stack
+	 * 
+	 * @param meta
+	 *            LeatherArmorMeta to set
+	 * 
+	 * @throws NonLeatherArmourException
+	 *             If the stack is not a valid piece of leather armour
+	 */
+	public ItemBuilder setLeatherArmourMeta(LeatherArmorMeta meta)
+			throws NonLeatherArmourException {
+		if (!isLeather())
+			throw new NonLeatherArmourException();
+		setMeta(meta);
 		return this;
 	}
 
@@ -279,5 +339,14 @@ public class ItemBuilder {
 	 */
 	public ItemMeta getMeta() {
 		return meta;
+	}
+
+	private class NonLeatherArmourException extends Exception {
+
+		private static final long serialVersionUID = -2484042902005308457L;
+
+		public NonLeatherArmourException() {
+			super("Stack is not a valid piece of leather armour");
+		}
 	}
 }
