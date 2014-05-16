@@ -34,7 +34,8 @@ Permissions
 
 
 
-|*Permission*|*Command*|*=Description*|*Default*|
+|Permission|Command|Description|Default|
+|----------|-------|-----------|-------|
 |jcore.playdisc|/playdisc <disc> [all/player] or /playdisc list|Play a music disc to a player or globally|Op|
 |jcore.playmidi|/playmidi <all/player> <filename> or /playmidi list|Play a midi file to a player or globally|Op|
 |jcore.backup|/backup|Run a backup|Op|
@@ -48,7 +49,8 @@ Config
 
 
 
-|=Option|=Description|=Default|
+|Option|Description|Default|
+|------|-----------|-------|
 |debug|Show debug information on the console|false|
 |logging-enabled|Enable logging of player chat and commands|false|
 |backup-enabled|Enable backing up of the server|false|
