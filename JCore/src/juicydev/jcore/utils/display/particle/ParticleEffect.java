@@ -1,4 +1,4 @@
-package juicydev.jcore.utils.packet.particle;
+package juicydev.jcore.utils.display.particle;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import juicydev.jcore.utils.display.PacketUtil.PacketInstantiationException;
+import juicydev.jcore.utils.display.PacketUtil.PacketSendingException;
 import juicydev.jcore.utils.reflection.ReflectionUtil;
 import juicydev.jcore.utils.reflection.ReflectionUtil.PackageType;
 import juicydev.jcore.utils.reflection.ReflectionUtil.PacketType;
@@ -860,49 +862,5 @@ public enum ParticleEffect {
 			float offsetX, float offsetY, float offsetZ, float speed, int amount) {
 		displayBlockDust(center, MAX_RANGE, id, data, offsetX, offsetY,
 				offsetZ, speed, amount);
-	}
-
-	/**
-	 * Represents a runtime exception that can be thrown upon packet
-	 * instantiation
-	 */
-	private static final class PacketInstantiationException extends
-			RuntimeException {
-		private static final long serialVersionUID = 3203085387160737484L;
-
-		/**
-		 * @param message
-		 *            Message that will be logged
-		 */
-		public PacketInstantiationException(String message) {
-			super(message);
-		}
-
-		/**
-		 * @param message
-		 *            Message that will be logged
-		 * @param cause
-		 *            Cause of the exception
-		 */
-		public PacketInstantiationException(String message, Throwable cause) {
-			super(message, cause);
-		}
-	}
-
-	/**
-	 * Represents a runtime exception that can be thrown upon packet sending
-	 */
-	private static final class PacketSendingException extends RuntimeException {
-		private static final long serialVersionUID = 3203085387160737484L;
-
-		/**
-		 * @param message
-		 *            Message that will be logged
-		 * @param cause
-		 *            Cause of the exception
-		 */
-		public PacketSendingException(String message, Throwable cause) {
-			super(message, cause);
-		}
 	}
 }

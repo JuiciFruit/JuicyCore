@@ -14,6 +14,12 @@ import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.FireworkMeta;
 
+/**
+ * Firework effect utility class for playing firework effects without having to
+ * launch the firework or have the firework launch sound play
+ * 
+ * @author JuicyDev
+ */
 public class FireworkEffectPlayer {
 
 	private static Class<?> obc_CraftFirework;
@@ -56,6 +62,17 @@ public class FireworkEffectPlayer {
 		}
 	}
 
+	/**
+	 * Play a firework effect at a location without the launch sound of the
+	 * firework
+	 * 
+	 * @param loc
+	 *            Location to play firework
+	 * @param fe
+	 *            Effects to play
+	 * @throws Exception
+	 *             If there was an error during reflection
+	 */
 	public static void playFirework(Location loc, FireworkEffect... fe)
 			throws Exception {
 		Firework fw = loc.getWorld().spawn(loc, Firework.class);
@@ -77,6 +94,19 @@ public class FireworkEffectPlayer {
 		fw.remove();
 	}
 
+	/**
+	 * Play a firework effect to the specified player at a location without the
+	 * launch sound of the firework
+	 * 
+	 * @param player
+	 *            Player to play effect to
+	 * @param loc
+	 *            Location to play firework
+	 * @param fe
+	 *            Effects to play
+	 * @throws Exception
+	 *             If there was an error during reflection
+	 */
 	public static void playFirework(Player player, Location loc,
 			FireworkEffect... fe) throws Exception {
 		Firework fw = loc.getWorld().spawn(loc, Firework.class);
@@ -100,6 +130,19 @@ public class FireworkEffectPlayer {
 		fw.remove();
 	}
 
+	/**
+	 * Play a firework effect to the specified collection of players at a
+	 * location without the launch sound of the firework
+	 * 
+	 * @param players
+	 *            Collection of players to play effect to
+	 * @param loc
+	 *            Location to play firework
+	 * @param fe
+	 *            Effects to play
+	 * @throws Exception
+	 *             If there was an error during reflection
+	 */
 	public static void playFirework(Collection<Player> players, Location loc,
 			FireworkEffect... fe) throws Exception {
 		for (Player player : players)

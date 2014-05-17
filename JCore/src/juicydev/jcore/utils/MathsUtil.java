@@ -1,5 +1,8 @@
 package juicydev.jcore.utils;
 
+/**
+ * @author JuicyDev
+ */
 public class MathsUtil {
 
 	public static int roundUp(int from, int size) {

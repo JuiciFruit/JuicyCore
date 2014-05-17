@@ -7,6 +7,9 @@ import org.apache.commons.lang.Validate;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
+/**
+ * @author JuicyDev
+ */
 public class ItemGlow {
 
 	/**

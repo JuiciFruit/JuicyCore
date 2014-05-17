@@ -8,6 +8,11 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
+/**
+ * Utility class with methods for drawing accurate shapes of locations
+ * 
+ * @author JuicyDev
+ */
 public class LocationUtil {
 
 	/**

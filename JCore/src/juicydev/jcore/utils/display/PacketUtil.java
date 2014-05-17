@@ -12,6 +12,9 @@ import juicydev.jcore.utils.reflection.ReflectionUtil.SubPackageType;
 
 import org.bukkit.entity.Player;
 
+/**
+ * @author JuicyDev
+ */
 public class PacketUtil {
 
 	private static Class<?> obc_CraftPlayer;
@@ -97,9 +100,17 @@ public class PacketUtil {
 	 * Represents a runtime exception that can be thrown upon packet
 	 * instantiation
 	 */
-	private static final class PacketInstantiationException extends
+	public static final class PacketInstantiationException extends
 			RuntimeException {
 		private static final long serialVersionUID = -5179311826851333234L;
+
+		/**
+		 * @param message
+		 *            Message that will be logged
+		 */
+		public PacketInstantiationException(String message) {
+			super(message);
+		}
 
 		/**
 		 * @param message
@@ -115,7 +126,7 @@ public class PacketUtil {
 	/**
 	 * Represents a runtime exception that can be thrown upon packet sending
 	 */
-	private static final class PacketSendingException extends RuntimeException {
+	public static final class PacketSendingException extends RuntimeException {
 		private static final long serialVersionUID = 5840716116919917394L;
 
 		/**

@@ -2,6 +2,9 @@ package juicydev.jcore.utils;
 
 import java.io.File;
 
+/**
+ * @author JuicyDev
+ */
 public class FileUtil {
 
 	/**

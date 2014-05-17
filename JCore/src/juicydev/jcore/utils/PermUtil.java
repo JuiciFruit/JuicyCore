@@ -6,6 +6,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.permissions.Permission;
 
+/**
+ * @author JuicyDev
+ */
 public class PermUtil {
 
 	/**
