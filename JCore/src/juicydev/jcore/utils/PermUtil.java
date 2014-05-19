@@ -7,17 +7,21 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.permissions.Permission;
 
 /**
+ * Permissions utility class
+ * 
  * @author JuicyDev
  */
 public class PermUtil {
 
 	/**
-	 * Checks if the player has the permission specified, and sends them a msg
-	 * if they don't.
+	 * Checks if the player has the permission specified, and sends them a
+	 * message if they don't.
 	 * 
 	 * @param sender
+	 *            CommandSender to test
 	 * @param perm
-	 * @return
+	 *            Permission to test
+	 * @return True if the sender has the permission
 	 */
 	public static boolean testPerm(CommandSender sender, Permission perm) {
 		if (sender instanceof ConsoleCommandSender)
@@ -33,8 +37,10 @@ public class PermUtil {
 	 * Checks if the player has the permission specified.
 	 * 
 	 * @param sender
+	 *            CommandSender to test
 	 * @param perm
-	 * @return
+	 *            Permission to test
+	 * @return True if the sender has the permission
 	 */
 	public static boolean testPermSilent(CommandSender sender, Permission perm) {
 		if (sender instanceof ConsoleCommandSender)
@@ -50,8 +56,10 @@ public class PermUtil {
 	 * if they don't.
 	 * 
 	 * @param sender
+	 *            CommandSender to test
 	 * @param node
-	 * @return
+	 *            Permission node to test
+	 * @return True if the sender has the permission
 	 */
 	public static boolean testPerm(CommandSender sender, String node) {
 		if (sender instanceof ConsoleCommandSender)
@@ -67,8 +75,10 @@ public class PermUtil {
 	 * Checks if the player has the permission specified.
 	 * 
 	 * @param sender
+	 *            CommandSender to test
 	 * @param node
-	 * @return
+	 *            Permission node to test
+	 * @return True if the sender has the permission
 	 */
 	public static boolean testPermSilent(CommandSender sender, String node) {
 		if (sender instanceof ConsoleCommandSender)

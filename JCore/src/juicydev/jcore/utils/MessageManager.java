@@ -12,6 +12,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 /**
+ * Messaging utility class
+ * 
  * @author JuicyDev
  */
 public class MessageManager {
