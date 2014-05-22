@@ -1,5 +1,5 @@
-JCore
-=====
+JuicyCore
+=========
 
 Core plugin containing methods required by some of my plugins. However it does have extra functionality that you can use without extra plugins.
 
@@ -12,8 +12,8 @@ Core plugin containing methods required by some of my plugins. However it does h
 Bukkit Dev Link: http://dev.bukkit.org/bukkit-plugins/jcore-juicydev/
 
 
-MCStats: [Stats for JCore](http://mcstats.org/plugin/JCore)  
-[![MCStats for JCore](http://api.mcstats.org/signature/JCore.png)](http://mcstats.org/plugin/JCore)
+MCStats: [Stats for JuicyCore](http://mcstats.org/plugin/JCore)  
+[![MCStats for JuicyCore](http://api.mcstats.org/signature/JCore.png)](http://mcstats.org/plugin/JCore)
 
 
 If you can, please donate, it helps me out a lot:
